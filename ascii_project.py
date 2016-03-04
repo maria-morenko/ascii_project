@@ -8,7 +8,7 @@ l = int(input())
 h = int(input())
 t = input()
 rows = []
-ascii=[]
+ascii_representation = []
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?"
 small_alphabet = "abcdefghijklmnopqrstuvwxyz?"
 for i in range(h):
@@ -22,8 +22,8 @@ for char in range(len(alphabet)):
         #print(char_line, file=sys.stderr)
         ascii_char += [char_line]
     #print(ascii_char, file=sys.stderr)
-    ascii += [ascii_char]
-print(ascii, file=sys.stderr)
+    ascii_representation += [ascii_char]
+print(ascii_representation, file=sys.stderr)
 def char_index(char):
     for index in range(len(alphabet)):
         if char == alphabet[index]:
@@ -37,7 +37,7 @@ for y in range(h):
     for symbol in range(len(t)):
         letter = t[symbol]
         letter_index = char_index(letter)
-        letter_ascii = ascii[letter_index]
+        letter_ascii = ascii_representation[letter_index]
         letter_row = letter_ascii[y]
         t_row += letter_row
     print(t_row)
