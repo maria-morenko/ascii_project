@@ -10,7 +10,6 @@ t = input()
 rows = []
 ascii_representation = []
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ?"
-small_alphabet = "abcdefghijklmnopqrstuvwxyz?"
 for i in range(h):
     row = input()
     rows += [row]
@@ -25,12 +24,10 @@ for char in range(len(alphabet)):
     ascii_representation += [ascii_char]
 print(ascii_representation, file=sys.stderr)
 def char_index(char):
-    for index in range(len(alphabet)):
-        if char == alphabet[index]:
-            return index
-        elif char == small_alphabet[index]:
-            return index
-    return char_index("?")
+    try:
+        return alphabet.index(char.upper())
+    except e:
+        return char_index("?")
 print(char_index("E"), file=sys.stderr)
 for y in range(h):
     t_row = ""
